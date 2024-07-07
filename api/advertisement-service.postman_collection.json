@@ -1,0 +1,422 @@
+{
+	"info": {
+		"_postman_id": "c6b0b918-c625-468f-955e-5a86ed4f8f84",
+		"name": "advertisement-service",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "15368019"
+	},
+	"item": [
+		{
+			"name": "Advertisement",
+			"item": [
+				{
+					"name": "List advertisements",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/advertisements?offset=0&limit=2&sort_by=id&sort_dir=asc",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"advertisements"
+							],
+							"query": [
+								{
+									"key": "offset",
+									"value": "0"
+								},
+								{
+									"key": "limit",
+									"value": "2"
+								},
+								{
+									"key": "sort_by",
+									"value": "id"
+								},
+								{
+									"key": "sort_dir",
+									"value": "asc"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "List advertisements",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/advertisements",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"advertisements"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 06 Jul 2024 13:11:15 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "118"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": 5,\n        \"created_at\": \"2024-07-06T13:08:33Z\",\n        \"name\": \"Test 1\",\n        \"description\": \"Test 1\",\n        \"price\": 10.29,\n        \"is_active\": false\n    }\n]"
+						},
+						{
+							"name": "List advertisements with optional queries",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/advertisements?offset=0&limit=2&sort_by=id&sort_dir=asc",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"advertisements"
+									],
+									"query": [
+										{
+											"key": "offset",
+											"value": "0"
+										},
+										{
+											"key": "limit",
+											"value": "2"
+										},
+										{
+											"key": "sort_by",
+											"value": "id"
+										},
+										{
+											"key": "sort_dir",
+											"value": "asc"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 07 Jul 2024 07:04:10 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "233"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": 1,\n        \"created_at\": \"2024-07-07T06:56:46Z\",\n        \"name\": \"Test 1\",\n        \"description\": \"Test 1\",\n        \"price\": 10.29,\n        \"is_active\": false\n    },\n    {\n        \"id\": 2,\n        \"created_at\": \"2024-07-07T06:57:13Z\",\n        \"name\": \"Test 2\",\n        \"description\": \"Test 2\",\n        \"price\": 10.29,\n        \"is_active\": true\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Create a advertisement",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Test 2\",\n    \"description\": \"Test 2\",\n    \"price\": 13,\n    \"is_active\": true\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/advertisements",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"advertisements"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Create a advertisement success result",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Test 1\",\n    \"description\": \"Test 1\",\n    \"price\": 10.29,\n    \"is_active\": false\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/advertisements",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"advertisements"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 06 Jul 2024 13:08:32 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "116"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 5,\n    \"created_at\": \"2024-07-06T13:08:33Z\",\n    \"name\": \"Test 1\",\n    \"description\": \"Test 1\",\n    \"price\": 10.29,\n    \"is_active\": false\n}"
+						}
+					]
+				},
+				{
+					"name": "Update the advertisement",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Test 5 updated\",\n    \"description\": \"Test 5 updated\",\n    \"price\": 10.32,\n    \"is_active\": false\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/advertisements/5",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"advertisements",
+								"5"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Update the advertisement",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Test 5 updated\",\n    \"description\": \"Test 5 updated\",\n    \"price\": 10.32,\n    \"is_active\": false\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/advertisements/5",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"advertisements",
+										"5"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 06 Jul 2024 13:43:57 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "132"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 0,\n    \"created_at\": \"0001-01-01T00:00:00Z\",\n    \"name\": \"Test 5 updated\",\n    \"description\": \"Test 5 updated\",\n    \"price\": 10.32,\n    \"is_active\": false\n}"
+						}
+					]
+				},
+				{
+					"name": "Get the advertisement",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/advertisements/5",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"advertisements",
+								"5"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get the advertisement",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/advertisements/5",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"advertisements",
+										"5"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 06 Jul 2024 13:45:40 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "132"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 5,\n    \"created_at\": \"2024-07-06T13:08:33Z\",\n    \"name\": \"Test 5 updated\",\n    \"description\": \"Test 5 updated\",\n    \"price\": 10.32,\n    \"is_active\": false\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete the advertisement",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/advertisements/5",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"advertisements",
+								"5"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Delete the advertisement",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/advertisements/5",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"advertisements",
+										"5"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 06 Jul 2024 13:45:51 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "2"
+								}
+							],
+							"cookie": [],
+							"body": "5"
+						}
+					]
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "http://localhost:1323",
+			"type": "string"
+		}
+	]
+}

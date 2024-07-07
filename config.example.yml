@@ -1,0 +1,12 @@
+server:
+    port: 8080
+database:
+    host: 'db'
+    port: 3306
+    user: 'richxcame'
+    password: 'more'
+    name: 'advertisements'
+cache:
+    addr: 'cache:6379'
+    password: ''
+    db: ''

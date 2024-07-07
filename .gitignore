@@ -1,0 +1,5 @@
+config.yml
+bin
+**/.DS_Store
+**/*.swp
+**/*.swo
